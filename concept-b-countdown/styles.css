@@ -146,29 +146,6 @@ body {
   background: #171717;
 }
 
-
-.promo-strip {
-  margin-top: 14px;
-  border: 1px solid rgba(59, 242, 112, 0.35);
-  border-radius: 10px;
-  background: rgba(59, 242, 112, 0.08);
-  color: var(--ligabet-green);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-align: center;
-  padding: 8px 10px;
-}
-
-.promo-icon { margin-right: 5px; }
-
-.social-proof {
-  margin-top: 9px;
-  text-align: center;
-  font-size: 11px;
-  color: #96a0a8;
-}
-
 .cta {
   margin-top: 14px;
   width: 100%;

@@ -41,8 +41,7 @@
   var state = {
     match: null,
     kickoffMs: 0,
-    baselineMs: 0,
-    userCount: 2847
+    baselineMs: 0
   };
 
   var els = {
@@ -58,8 +57,7 @@
     oddHome: document.getElementById('oddHome'),
     oddDraw: document.getElementById('oddDraw'),
     oddAway: document.getElementById('oddAway'),
-    cta: document.getElementById('cta'),
-    userCount: document.getElementById('userCount')
+    cta: document.getElementById('cta')
   };
 
   function formatTeamName(name) {
@@ -121,19 +119,8 @@
     els.heroCard.classList.remove('urgent-1h', 'urgent-10m', 'urgent-1m');
     els.heroCard.classList.add(urgency.cls);
 
-    var remaining = Math.max(0, Math.min(1, ms / state.baselineMs));
-    els.progressBar.style.width = (remaining * 100).toFixed(1) + '%';
-  }
-
-
-  function formatNumber(n) {
-    return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  }
-
-  function tickUserCount() {
-    var drift = Math.floor(Math.random() * 35) - 17;
-    state.userCount = Math.max(2400, Math.min(3600, state.userCount + drift));
-    if (els.userCount) els.userCount.textContent = formatNumber(state.userCount);
+    var elapsed = Math.max(0, Math.min(1, 1 - (ms / state.baselineMs)));
+    els.progressBar.style.width = (elapsed * 100).toFixed(1) + '%';
   }
 
   function fetchMatches() {
@@ -160,9 +147,6 @@
     }
     window.open(CONFIG.CLICK_URL, '_blank');
   });
-
-  tickUserCount();
-  setInterval(tickUserCount, 3500);
 
   fetchMatches().then(function (matches) {
     renderMatch(chooseTopMatch(matches));
