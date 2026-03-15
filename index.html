@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<script src="mraid.js"></script>
+<!--
+  CDN SETUP: Before uploading to Kayzen, replace these paths with your Kayzen CDN URLs:
+  <link rel="stylesheet" href="https://your-cdn.kayzen.io/football/styles.css">
+  <script src="https://your-cdn.kayzen.io/football/main.js">
+  For local testing, relative paths work fine.
+-->
+<link rel="stylesheet" href="https://kayzencdn.akamaized.net/upload-kayzen-io/abf3f3ad-3710-4642-a3f6-90158abeb4fe-styles.css">
+</head>
+<body>
+
+<div class="bg"></div>
+<div class="particles" id="particles"></div>
+
+<div class="container">
+
+  <div class="header">
+    <div class="brand-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 246 113" fill="none" class="ls-logo"><rect width="245.697" height="112.015" fill="#3BF270"/><path d="M120.833 59.002h-5.658c-2.257 0-4.092 1.84-4.092 4.096v20.28c0 2.375 1.721 4.096 4.092 4.096h5.658c2.256 0 4.092-1.835 4.092-4.096v-5.355h-4.378v4.521a.852.852 0 01-.9.9h-3.148a.852.852 0 01-.9-.9V63.838c0-.495.406-.9.9-.9h3.148c.495 0 .9.405.9.9v4.828h4.378v-5.572c0-2.26-1.836-4.096-4.092-4.096zM139.483 64.664h-12.837v4.006h4.228v18.812h4.378V68.67h4.231v-4.006zM68.734 77.487h-.429V64.668h-4.379v22.814h3.856l4.799-12.227h.43v12.227h4.378V64.668h-3.904l-4.751 12.82zM49.83 58.998l-5.347 28.48h4.636l3.663-23.849h.429l3.822 23.849h4.648l-5.306-28.48H49.83zM143.894 64.664l-4.771 22.814h4.403l.544-2.919h5.862l.54 2.919h4.419l-4.746-22.814h-6.247l-.004-.001zm.883 16.11l2.036-12.104h.413l2.011 12.104h-4.456l-.004-.001zM94.15 64.664l-4.771 22.814h4.403l.544-2.919h5.862l.54 2.919h4.419l-4.746-22.814H94.154l-.004-.001zm.883 16.11l2.036-12.104h.413l2.011 12.104h-4.456l-.004-.001zM90.585 64.664H80.663v22.818h4.383V68.67h5.539v-4.006zM181.497 64.664h-4.84c-2.257 0-4.093 1.84-4.093 4.096v14.626c0 2.256 1.836 4.096 4.093 4.096h4.84c2.257 0 4.092-1.836 4.092-4.096V68.76c0-2.261-1.835-4.096-4.092-4.096zm-.286 17.888a.852.852 0 01-.9.9h-2.473a.852.852 0 01-.9-.9V69.59c0-.495.406-.9.9-.9h2.473c.495 0 .9.409.9.916v12.946zM202.649 64.668h-4.722l-3.957 9.68h-.761v-9.68h-4.341v22.814h4.341v-9.345h.932l4.023 9.345h4.73l-5.073-11.442 4.828-11.372zM166.755 76.334v-.425h-.004c1.692-.351 2.968-1.86 2.968-3.663v-3.495c0-2.248-1.836-4.08-4.092-4.08h-8.5v22.815h8.704c2.257 0 4.096-1.836 4.096-4.096v-3.225c0-1.897-1.365-3.479-3.168-3.826l-.004-.005zm-5.249-7.652h2.935c.495 0 .9.405.9.9v3.875a.852.852 0 01-.9.9h-2.935v-5.675zm4.039 13.874a.852.852 0 01-.9.9h-3.139v-5.315h3.14c.494 0 .899.405.899.9v3.515zM24.529 24.529v62.953h12.113V36.02h172.413v51.462h12.113V24.529H24.529z" fill="#1A1A1A"/></svg>
+    </div>
+    <div class="live-pulse"><div class="live-dot"></div>LIVE MATCHES</div>
+    <div class="title">TODAY'S TOP PICKS</div>
+  </div>
+
+  <div id="countdownSection">
+    <div class="countdown-label" id="countdownLabel">Next match starts in</div>
+    <div class="countdown">
+      <div class="time-block"><div class="time-num" id="hrs">--</div><div class="time-label">Hours</div></div>
+      <div class="time-block"><div class="time-num" id="mins">--</div><div class="time-label">Mins</div></div>
+      <div class="time-block"><div class="time-num" id="secs">--</div><div class="time-label">Secs</div></div>
+    </div>
+  </div>
+
+  <div id="matches">
+    <div class="loading">
+      <div class="skeleton-card"></div>
+      <div class="skeleton-row"><div class="skeleton-mini"></div><div class="skeleton-mini"></div></div>
+    </div>
+  </div>
+
+  <div class="promo-strip" id="promoStrip">
+    <span class="promo-icon">&#127873;</span>
+    <span class="promo-text">200% WELCOME BONUS</span>
+    <span class="promo-tag">NEW</span>
+  </div>
+
+  <button class="cta" id="cta"><span class="cta-text">BET NOW</span></button>
+
+  <div class="carousel-dots" id="carouselDots"></div>
+
+  <div class="social-proof">
+    <div class="avatars"><div class="avatar"></div><div class="avatar"></div><div class="avatar"></div></div>
+    <span><span class="user-count" id="userCount">2,847</span> betting now</span>
+  </div>
+
+  <div class="disclaimer">18+ | Gamble responsibly</div>
+
+</div>
+
+<script src="https://kayzencdn.akamaized.net/upload-kayzen-io/09583319-2d28-45db-909b-9d7b86435ebe-main.js"></script>
+</body>
+</html>
